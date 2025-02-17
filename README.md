@@ -2,55 +2,22 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
 
-## Development server
+## App Image
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
+<div>
+  <img src="https://github.com/user-attachments/assets/c7af3c48-ba03-432f-bb81-e9e107cbd467" width="500" >
+  <img src="https://github.com/user-attachments/assets/91389c3b-58c5-4f26-8373-fd24f6a5a911" width="500" >
+  <img src="https://github.com/user-attachments/assets/68fae6c7-65c8-409c-aff9-f4a50fc2bfab" width="500" >
+  <img src="https://github.com/user-attachments/assets/5629da0c-917f-4350-b9b2-f8dd48d644d3" width="500" >
+  <img src="https://github.com/user-attachments/assets/1d7c20af-f1b1-4afa-b63a-5570d5933f6f" width="500" >
+  <img src="https://github.com/user-attachments/assets/aab9078a-c054-4488-b51c-bda334010114" width="500" >
+  <img src="https://github.com/user-attachments/assets/d02630ef-6fd3-4667-b697-301422834ced" width="500" >
+  <img src="https://github.com/user-attachments/assets/34df4720-89fc-4b8b-a0d9-8e9cf1e2f1be" width="500" >
+  <img src="https://github.com/user-attachments/assets/0b80c395-9be1-44a0-a55d-8a3095c21dc8" width="500" >
+  <img src="https://github.com/user-attachments/assets/b706b148-eca0-4b9d-986d-6f75085d0ce2" width="500" >
+  <img src="https://github.com/user-attachments/assets/7a51202b-9e43-43a7-83a5-b0dc0bfcfe18" width="500" >
+  <img src="https://github.com/user-attachments/assets/6affa05c-2e27-471c-bf11-dad0c6b9b7a5" width="500" >
+</div>
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
