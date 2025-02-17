@@ -19,6 +19,8 @@ export class GlobalService {
   jobDetails$ = this.jobDetails.asObservable();
   isLogin : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
   isLogin$ = this.isLogin.asObservable();
+  userData:BehaviorSubject<any> = new BehaviorSubject({});
+  userData$ = this.userData.asObservable();
   constructor(private spinnerService: NgxSpinnerService) {
    }
   showSpinner() {

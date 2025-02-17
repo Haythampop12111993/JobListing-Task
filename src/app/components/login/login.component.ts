@@ -37,6 +37,7 @@ export class LoginComponent {
           this.router.navigate(["/home"]);
           this.ToastrService.success("Login Successfully");
           this.GlobalService.isLogin.next(true);
+          this.GlobalService.userData.next(this.userData);
           this.isSubmitted = false;
           this.loginForm.reset();
         }else{
