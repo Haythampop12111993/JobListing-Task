@@ -1,0 +1,67 @@
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg ">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a  class="text-2xl font-bold text-gray-800">MyLogo</a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <button routerLink="/"  class="text-gray-800 hover:text-purple-600 hover:cursor-pointer"  >Home</button>
+                    @if (isLogin) {
+                      <div class="relative group">
+                        <a  class="text-gray-800  flex items-center">
+                            Welcome "{{userData.userData.name}}"
+                            <!-- <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg> -->
+                        </a>
+                        <!-- Dropdown Menu -->
+                        <!-- <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
+                            <a  class="block px-4 py-2 text-gray-800 hover:bg-purple-100">{{userData.userData.name}}</a>
+                            <a  class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Logout</a>
+                        </div> -->
+                    </div>
+                    <div>
+                      <button (click)="logout()" class="text-gray-800 hover:text-purple-600 hover:cursor-pointer">Logout</button>
+                    </div>
+                    }@else {
+                      <a routerLink="/login" class="text-gray-800 hover:text-purple-600">Login</a>}
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a  class="block px-6 py-2 text-gray-800 hover:bg-purple-100">Home</a>
+            <a  class="block px-6 py-2 text-gray-800 hover:bg-purple-100">About</a>
+            <div class="relative">
+                <a  class="block px-6 py-2 text-gray-800 hover:bg-purple-100 flex items-center">
+                    Services
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <!-- Mobile Dropdown Menu -->
+                <div class="pl-6">
+                    <a  class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Web Design</a>
+                    <a  class="block px-4 py-2 text-gray-800 hover:bg-purple-100">SEO</a>
+                    <a  class="block px-4 py-2 text-gray-800 hover:bg-purple-100">Marketing</a>
+                </div>
+            </div>
+            <a  class="block px-6 py-2 text-gray-800 hover:bg-purple-100">Contact</a>
+        </div>
+    </nav>
+

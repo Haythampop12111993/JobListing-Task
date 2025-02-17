@@ -1,0 +1,82 @@
+<div class="flex items-start justify-center min-h-screen bg-gray-100 pt-[5%]">
+    <!-- Login Card -->
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+        <!-- Logo or Header -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Welcome Back</h1>
+            <p class="text-gray-600">Sign in to your account</p>
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <!-- Email Input -->
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email/Phone</label>
+                <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    formControlName="emailOrPhone"
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                />
+                @if (loginForm.get('emailOrPhone')?.invalid && isSubmitted) {
+                  @if (loginForm.get('emailOrPhone')?.errors?.["required"]) {
+                    <div class="text-red-500 text-sm">
+                        <p>Email/Phone is required</p>
+                    </div>
+                  }
+                }
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-6">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    formControlName="password"
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                />
+                @if (loginForm.get('password')?.invalid && isSubmitted) {
+                  @if (loginForm.get('password')?.errors?.["required"]) {
+                    <div class="text-red-500 text-sm">
+                        <p>Password is required</p>
+                    </div>
+                  }
+                }
+            </div>
+
+            <!-- Remember Me and Forgot Password -->
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center">
+                    <input
+                        type="checkbox"
+                        id="remember"
+                        name="remember"
+                        class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    />
+                    <label for="remember" class="ml-2 text-sm text-gray-700">Remember me</label>
+                </div>
+                <a  class="text-sm text-blue-600 hover:text-blue-500">Forgot password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+                Sign In
+            </button>
+        </form>
+
+        <!-- Sign Up Link -->
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">Don't have an account? <a routerLink="/register"  class="text-blue-600 hover:text-blue-500">Sign up</a></p>
+        </div>
+    </div>
+  </div>

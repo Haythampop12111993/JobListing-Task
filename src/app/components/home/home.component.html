@@ -1,0 +1,46 @@
+<ngx-spinner type="ball-scale-pulse">
+  <p style="font-size: 20px; color: #fff">Loading...</p>
+</ngx-spinner>
+<div class="container mx-auto p-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    @for (job of jobs; track $index) {
+      <div  class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex justify-between items-center">
+          <div >
+            <h2 class="text-xl font-bold">{{ job.title }}</h2>
+          </div>
+          <div><img style="width: 50px;" src="assets/images/office.png" alt="company logo"></div>
+        </div>
+
+       <div class="w-fit flex gap-2 ">
+        <p class="text-gray-900 rounded-full bg-gray-200 font-bold px-2 py-1 text-xs text-s ">{{ job.type}}</p>
+        <p class="text-gray-900 rounded-full bg-gray-200 font-bold px-2 py-1 text-xs text-s ">On-site</p>
+       </div>
+       <div class="mt-4 text-xs">
+        <p>
+          Posted From:
+           {{job.created_at | customDate
+          }} days ago</p>
+       </div>
+
+        <button (click)="openJobDetails(job)" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer ">
+          More Details
+        </button>
+      </div>
+    }
+  </div>
+  <div [ngClass]="{'hidden': !isLoading }" class="flex justify-center">
+    <button   (click)="loadMoreOrLess()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer">
+      {{ !isShowMore ? 'Load More' : 'Show less' }}
+    </button>
+  </div>
+</div>
+<app-pagination (selectedNumber)="getNumberFromChild($event)"></app-pagination>
+
+<!-- <div>
+  <h2 class="text-xl font-bold">{{ job.title }}</h2>
+        <p class="text-gray-600">{{ job.company }}</p>
+        <p class="text-gray-600">{{ job.location }}</p>
+        <p class="text-gray-600">{{ job.datePosted }}</p>
+        <p class="text-gray-600">{{ job.description }}</p>
+</div> -->

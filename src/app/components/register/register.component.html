@@ -1,0 +1,124 @@
+<div class="flex items-start justify-center min-h-screen bg-gray-100 pt-[5%]">
+    <!-- Register Card -->
+    <div class="bg-white shadow-2xl rounded-lg p-8 w-full max-w-md transform transition-all hover:scale-105">
+        <!-- Header -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Create an Account</h1>
+            <p class="text-gray-600">Join us to get started</p>
+        </div>
+
+        <!-- Register Form -->
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <!-- Name Input -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    formControlName="name"
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                    required
+                />
+                @if (registerForm.get('name')?.invalid && isSubmitted) {
+                  <div class="text-red-500 text-sm">
+                      <!-- <p *ngIf="registerForm.errors['name']">Name is required</p> -->
+                      @if (registerForm.get('name')?.errors?.["required"]) {
+                        <!-- {{registerForm.get('name')?.errors | json}} -->
+                          <p>Name is required</p>
+
+                      }
+                  </div>
+              }
+
+            </div>
+
+            <!-- Email Input -->
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    formControlName="email"
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                    required
+                />
+                @if (registerForm.get('email')?.invalid && isSubmitted) {
+                  <div class="text-red-500 text-sm">
+                      <!-- <p *ngIf="registerForm.errors['name']">Name is required</p> -->
+                      @if (registerForm.get('email')?.errors?.["required"]) {
+                        <!-- {{registerForm.get('name')?.errors | json}} -->
+                          <p>Email is required</p>
+
+                      }
+                  </div>
+              }
+            </div>
+            <!-- Phone Input -->
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-medium text-gray-700">Phone</label>
+              <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone"
+                  formControlName="phone"
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                  required
+              />
+              @if (registerForm.get('phone')?.invalid && isSubmitted) {
+                <div class="text-red-500 text-sm">
+                    <!-- <p *ngIf="registerForm.errors['name']">Name is required</p> -->
+                    @if (registerForm.get('phone')?.errors?.["required"]) {
+                      <!-- {{registerForm.get('name')?.errors | json}} -->
+                        <p>Phone is required</p>
+
+                    }
+                </div>
+            }
+          </div>
+
+            <!-- Password Input -->
+            <div class="mb-6">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    formControlName="password"
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                    required
+                />
+                @if (registerForm.get('password')?.invalid && isSubmitted) {
+                  <div class="text-red-500 text-sm">
+                      <!-- <p *ngIf="registerForm.errors['name']">Name is required</p> -->
+                      @if (registerForm.get('password')?.errors?.["required"]) {
+                        <!-- {{registerForm.get('name')?.errors | json}} -->
+                          <p>Password is required</p>
+
+                      }
+                  </div>
+              }
+            </div>
+
+            <!-- Submit Button -->
+            <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all"
+            >
+                Sign Up
+            </button>
+        </form>
+
+        <!-- Login Link -->
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">Already have an account? <a routerLink="/login"  class="text-purple-600 hover:text-purple-500">Log in</a></p>
+        </div>
+    </div>
+</div>
+
+
